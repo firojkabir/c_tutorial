@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1583864498 source:/home/rimon/Desktop/C/c_tutorial01/main.c
+	<stdio.h>
+	<stdlib.h>
+
