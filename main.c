@@ -22,34 +22,59 @@ int i;
 //    }
 
 //    *********** Struct ***********
-//    typedef struct studentInfo {
-//        char name[50];
-//        int id;
-//        int age;
-//        int height;
-//        int weight;
-//    }Info;
+    typedef struct studentInfo {
+        char name[50];
+        int id;
+        int age;
+        int height;
+        int weight;
+    }Info;
 
 //    ********** File I/O ***********
     void fileIOTest(){
 
+        FILE* inputFile;
 
+        inputFile = fopen("/home/rimon/Desktop/C/c_tutorial01/inpFile.txt", "r");
 
-        FILE* outFile = fopen("/home/rimon/Desktop/C/c_tutorial01/outFile.txt", "w");
+        if(inputFile!=NULL){
+            FILE* outFile = fopen("/home/rimon/Desktop/C/c_tutorial01/outFile.txt", "w");
 
-        if(outFile!=NULL){
-            printf("File created successfully!!\n");
+            if(outFile!=NULL){
+                printf("File read and write successfully!!\n");
 
-            fprintf(outFile, "You have created this file through FILE IO to print till %d\n",100);
+                //Data read and write
+                Info sInfo;
+                fscanf(inputFile, "%s", sInfo.name);
+                fscanf(inputFile, "%d %d %d %d", &(sInfo.id), &(sInfo.age), &(sInfo.height), &(sInfo.weight));
 
-            for (i=1; i<=100; i++){
-                fprintf(outFile, "Roll no: %d\n", i);
+                fprintf(outFile, "Name: %s\nID: %d\nAge: %d\nHeight: %d\nWeight: %d\n", sInfo.name, sInfo.id, sInfo.age, sInfo.height, sInfo.weight);
+
+                fclose(outFile);
+            }else{
+                printf("File could not be created.\n");
             }
 
-            fclose(outFile);
-        }else{
-            printf("File could not be created.\n");
+
+            fclose(inputFile);
         }
+
+
+//        FILE* outFile = fopen("/home/rimon/Desktop/C/c_tutorial01/outFile.txt", "w");
+//
+//        if(outFile!=NULL){
+//            printf("File created successfully!!\n");
+//
+//            fprintf(outFile, "You have created this file through FILE IO to print till %d\n",100);
+//
+//            for (i=1; i<=100; i++){
+//                fprintf(outFile, "Roll no: %d\n", i);
+//            }
+//
+//            fclose(outFile);
+//        }else{
+//            printf("File could not be created.\n");
+//        }
     }
 
 
@@ -65,7 +90,6 @@ int i;
 
 int main()
 {
-    int i;
 //    *********** Variable, Data-type, Arithmetic, Operations ***********
 //    int a=99, b=6;
 //    int  result=a%b;
