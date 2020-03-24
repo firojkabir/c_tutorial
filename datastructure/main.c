@@ -2,16 +2,54 @@
 
 int main()
 {
+//  ******* Time Complexity: 1st Example O(n) *******
 
-    int i, n, result;
+//    int i, n, result;
+//
+//    printf("Input a number: \n");
+//    scanf("%d", &n);
+//
+//    result = 0;
+//    for( i = 0; i < n; i++ ){
+//        result = result + i;
+//    }
+//    printf("Result = %d\n", result);
 
-    scanf("%d\n", &n);
-    result = 0;
+//  ****** Time Complexity: 2nd Example O(n^2) *******
+//
+//    int i, j, n, count;
+//
+//    printf("Input a number: \n");
+//    scanf("%d", &n);
+//
+//    count = 0;
+//    for( i = 0; i < n; i++){
+//        for( j = 0; j < n; j++){
+//            count = count + 1;
+//        }
+//    }
+//
+//    printf("N = %d, Count = %d\n", n, count);
 
-    for( i = 0; i < n; i++ ){
-        result = result + i;
+//  ****** Time Complexity: 3rd Example O(n^3) *******
+//
+    int i, j, k, n, count;
+
+    printf("Input a number: \n");
+    scanf("%d", &n);
+
+    count = 0;
+    for( i = 0; i < n; i++){
+        for( j = 0; j < n; j++){
+            for( k = 0; k < n; k++){
+            count = count + 1;
+        }
+        }
     }
 
-    printf("Result = %d\n", result);
+    printf("N = %d, Count = %d\n", n, count);
+
+
+
     return 0;
 }
