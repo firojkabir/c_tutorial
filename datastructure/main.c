@@ -110,21 +110,42 @@ int main()
 
 
 //******** Linear Search ********
+//
+//    int linear_search(int A[], int n, int x)
+//    {
+//        int i;
+//
+//        for( i = 0; i < n; i++ ){
+//            if( A[i] == 0 ){
+//                return i;
+//            }
+//        }
+//        i = -1;
+//        return i;
+//    }
 
-    int linear_search(int A[], int n, int x)
+
+//******** Binary Search ********
+
+    int binary_search(int A[], int n, int x)
     {
-        int i;
+        int left, right, mid;
+        left = 0;
+        right = n - 1;
 
-        for( i = 0; i < n; i++ ){
-            if( A[i] == 0 ){
-                return i;
+        while (left <= right) {
+            mid = (left + right) / 2;
+            if (A[mid] == x) {
+                return mid;
+            }
+            if (A[mid] < x) {
+                left = mid +1;
+            } else {
+                right = mid -1;
             }
         }
-        i = -1;
-        return i;
+        return -1;
     }
-
-
 
 
     return 0;
