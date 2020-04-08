@@ -126,26 +126,54 @@ int main()
 
 
 //******** Binary Search ********
+//
+//    int binary_search(int A[], int n, int x)
+//    {
+//        int left, right, mid;
+//        left = 0;
+//        right = n - 1;
+//
+//        while (left <= right) {
+//            mid = (left + right) / 2;
+//            if (A[mid] == x) {
+//                return mid;
+//            }
+//            if (A[mid] < x) {
+//                left = mid +1;
+//            } else {
+//                right = mid -1;
+//            }
+//        }
+//        return -1;
+//    }
 
-    int binary_search(int A[], int n, int x)
+
+//******** Selection Sort ********
+
+    void selection_sort(int a[], int n)
     {
-        int left, right, mid;
-        left = 0;
-        right = n - 1;
+        int i, j, index_min, temp;
 
-        while (left <= right) {
-            mid = (left + right) / 2;
-            if (A[mid] == x) {
-                return mid;
+        for ( i = 0; i < n-1; i++ ) {
+            index_min = i;
+            for ( j = i+1; j < n; j++ ) {
+                if ( A[j] < A[index_min] ) {
+                    index_min = j;
+                }
             }
-            if (A[mid] < x) {
-                left = mid +1;
-            } else {
-                right = mid -1;
+            if ( index_min != i ) {
+                temp = A[i];
+                A[i] = A[index_min];
+                A[index_min] = temp;
             }
         }
-        return -1;
     }
+
+
+
+
+
+
 
 
     return 0;
