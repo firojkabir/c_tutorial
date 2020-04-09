@@ -1,4 +1,7 @@
+//#define STACK_H
+
 #include <stdio.h>
+//#include "stack.h"
 
 int main()
 {
@@ -190,13 +193,39 @@ int main()
 
 //******** Insertion Sort: time-complexity = O(n^2), space-complexity = O(1) ********
 
+//    void insertion_sort(int A[], int n);
+//    {
+//        int i, j, item;
+//
+//        for ( i = 1; i < n; i++ ) {
+//            item = A[i];
+//            j = i - 1;
+//
+//            while ( j >= 0; && A[j] > item) {
+//                A[j+1] = A[j];
+//                j = j - 1;
+//            }
+//            A[j+1] = item;
+//        }
+//    }
 
 
+//*********** Stack ************
 
+    stack my_stack;
+    int item;
 
+    my_stack.top = 0;
 
+    push(&my_stack, 1);
+    push(&my_stack, 2);
+    push(&my_stack, 3);
 
+    item = pop(&my_stack);
+    printf("%d\n", item);
 
+    item = pop(&my_stack);
+    printf("%d\n", item);
 
 
 
