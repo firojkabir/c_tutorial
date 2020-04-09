@@ -148,30 +148,44 @@ int main()
 //    }
 
 
-//******** Selection Sort ********
+//******** Selection Sort: time-complexity = O(n^2)********
 
-    void selection_sort(int a[], int n)
+//    void selection_sort(int a[], int n)
+//    {
+//        int i, j, index_min, temp;
+//
+//        for ( i = 0; i < n-1; i++ ) {
+//            index_min = i;
+//            for ( j = i+1; j < n; j++ ) {
+//                if ( A[j] < A[index_min] ) {
+//                    index_min = j;
+//                }
+//            }
+//            if ( index_min != i ) {
+//                temp = A[i];
+//                A[i] = A[index_min];
+//                A[index_min] = temp;
+//            }
+//        }
+//    }
+
+
+//******** Bubble Sort: time-complexity = O(n^2), space-complexity = O(1) ********
+
+    void bubble_sort(int A[], int n)
     {
-        int i, j, index_min, temp;
+        int i, j, temp;
 
-        for ( i = 0; i < n-1; i++ ) {
-            index_min = i;
-            for ( j = i+1; j < n; j++ ) {
-                if ( A[j] < A[index_min] ) {
-                    index_min = j;
+        for ( i = 0; i < n; i++ ) {
+            for ( j = 0; j < n-i-1; j++ ) {
+                if (A[j] > A[j+1]) {
+                    temp = A[j];
+                    A[j] = A[j+1];
+                    A[j+1] = temp;
                 }
-            }
-            if ( index_min != i ) {
-                temp = A[i];
-                A[i] = A[index_min];
-                A[index_min] = temp;
             }
         }
     }
-
-
-
-
 
 
 
