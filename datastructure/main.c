@@ -211,21 +211,48 @@ int main()
 
 
 //*********** Stack ************
+//
+//    stack my_stack;
+//    int item;
+//
+//    my_stack.top = 0;
+//
+//    push(&my_stack, 1);
+//    push(&my_stack, 2);
+//    push(&my_stack, 3);
+//
+//    item = pop(&my_stack);
+//    printf("%d\n", item);
+//
+//    item = pop(&my_stack);
+//    printf("%d\n", item);
 
-    stack my_stack;
+
+//********** Queue *********
+
+    queue my_q;
     int item;
 
-    my_stack.top = 0;
+    my_q.head = 0;
+    my_q.tail = 0;
 
-    push(&my_stack, 1);
-    push(&my_stack, 2);
-    push(&my_stack, 3);
+    enqueue(&my_q, 1);
+    printf("tail = %d\n", my_q.tail);
+    enqueue(&my_q, 2);
+    printf("tail = %d\n", my_q.tail);
 
-    item = pop(&my_stack);
-    printf("%d\n", item);
+    printf("Beginning head = %d\n", my_q.head);
+    item = dequeue(&my_q);
+    printf("item = %d, head = %d\n", item, my_q.head);
+    item = dequeue(&my_q);
+    printf("item = %d, head = %d\n", item, my_q.head);
+    item = dequeue(&my_q);
+    printf("item = %d, head = %d\n", item, my_q.head);
 
-    item = pop(&my_stack);
-    printf("%d\n", item);
+
+
+
+
 
 
 
